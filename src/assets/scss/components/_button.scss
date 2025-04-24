@@ -1,3 +1,6 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
 .btn {
   &:link,
   &:visited {
@@ -12,7 +15,7 @@
   }
   &:hover {
     transform: translateY(-0.3rem);
-    @include boxShadow($color-black);
+    @include mixins.boxShadow(variables.$color-black);
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
       opacity: 0;
@@ -20,7 +23,7 @@
   }
   &:active {
     transform: translateY(1px);
-    @include boxShadow($color-black);
+    @include mixins.boxShadow(variables.$color-black);
   }
   &::after {
     content: '';
@@ -35,10 +38,10 @@
     left: 0;
   }
   &--white {
-    background-color: $color-white;
-    color: $color-grey-dark;
+    background-color: variables.$color-white;
+    color: variables.$color-grey-dark;
     &::after {
-      background-color: $color-white;
+      background-color: variables.$color-white;
     }
   }
 

@@ -1,6 +1,8 @@
+@use "../abstracts/variables";
+
 .header {
   height: 95vh;
-  background-image: linear-gradient(rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)),
+  background-image: linear-gradient(rgba(variables.$color-primary-light, 0.8), rgba(variables.$color-primary-dark, 0.8)),
     url('../images/hero.jpg');
   background-size: cover;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
