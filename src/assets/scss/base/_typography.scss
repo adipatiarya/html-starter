@@ -1,0 +1,27 @@
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: $color-grey-dark;
+  padding: 3rem;
+}
+
+.heading__primary {
+  text-transform: uppercase;
+  color: $color-white;
+
+  &--main {
+    font-weight: 400;
+    display: block;
+    font-size: 6rem;
+    letter-spacing: 7rem;
+    animation: moveInLeft 1s ease-out;
+  }
+  &--sub {
+    font-weight: 700;
+    display: block;
+    font-size: 2rem;
+    letter-spacing: 1.24rem;
+    animation: moveInRight 1s ease-out;
+  }
+}
