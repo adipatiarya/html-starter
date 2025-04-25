@@ -1,3 +1,11 @@
 @mixin boxShadow($color) {
   box-shadow: 0 1rem 2rem rgba($color, 0.2);
 }
+
+@mixin clearFix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}

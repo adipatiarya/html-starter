@@ -4,4 +4,17 @@
       margin-top: 6rem;
     }
   }
+  &__bottom {
+    &--big {
+      margin-bottom: 4rem;
+    }
+  }
+  &__bottom {
+    &--small {
+      margin-bottom: 1rem;
+    }
+  }
+}
+.text-center {
+  text-align: center;
 }
