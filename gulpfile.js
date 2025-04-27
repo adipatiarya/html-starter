@@ -56,6 +56,19 @@ const watchFiles = () => {
     )
   );
 };
+var AUTOPREFIXER = [
+  '> 1%',
+  'ie >= 8',
+  'edge >= 15',
+  'ie_mob >= 10',
+  'ff >= 45',
+  'chrome >= 45',
+  'safari >= 7',
+  'opera >= 23',
+  'ios >= 7',
+  'android >= 4',
+  'bb >= 10',
+];
 const scss = function () {
   const out = path.baseDistAssets + 'css/';
   return src(path.baseSrcAssets + 'scss/**/*.scss')
@@ -63,7 +76,7 @@ const scss = function () {
     .pipe(sass.sync().on('error', sass.logError)) // scss to css
     .pipe(
       autoPrefixer({
-        overrideBrowserslist: ['last 2 versions'],
+        overrideBrowserslist: AUTOPREFIXER,
       })
     )
     .pipe(dest(out))
