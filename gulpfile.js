@@ -76,6 +76,12 @@ const scss = function () {
 const clean = function (done) {
   del.deleteSync(path.baseDist, done());
 };
+const icons = () => {
+  return src(`${path.baseSrcAssets}/icons/**/*`, { encoding: false }).pipe(
+    dest(`${path.baseDistAssets}/icons`)
+  );
+};
+
 const images = function () {
   var out = path.baseDistAssets + 'images';
   return src(path.baseSrcAssets + 'images/**/*', { encoding: false })
@@ -94,5 +100,5 @@ const html = () =>
     .pipe(include('@@'))
     .pipe(dest(path.baseDist));
 
-export const build = series(clean, html, parallel(scss, images));
-export default series(html, parallel(scss, images), parallel(watchFiles, initBrowserSync));
+export const build = series(clean, html, parallel(scss, images, icons));
+export default series(html, parallel(scss, images, icons), parallel(watchFiles, initBrowserSync));
